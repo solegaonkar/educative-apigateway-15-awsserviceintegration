@@ -107,4 +107,9 @@ Resources:
                   - dynamodb:GetItem
                   - dynamodb:PutItem
                 Resource: !GetAtt CounterDB.Arn
-
+  APIDeployment:
+    Type: AWS::ApiGateway::Deployment
+    Properties:
+      RestApiId:
+        Ref: RestAPI
+      StageName: v1
