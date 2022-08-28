@@ -42,7 +42,7 @@ Resources:
                         $ref: "#/components/schemas/Empty"
               x-amazon-apigateway-integration:
                 type: "aws"
-                credentials: "arn:aws:iam::869871132949:role/EducativeRole"
+                credentials: "arn:aws:iam::${AWS::AccountId}:role/EducativeRole"
                 httpMethod: "POST"
                 uri: "arn:aws:apigateway:us-east-1:dynamodb:action/GetItem"
                 responses:
@@ -59,7 +59,7 @@ Resources:
                         $ref: "#/components/schemas/Empty"
               x-amazon-apigateway-integration:
                 type: "aws"
-                credentials: "arn:aws:iam::869871132949:role/EducativeRole"
+                credentials: "arn:aws:iam::${AWS::AccountId}:role/EducativeRole"
                 httpMethod: "POST"
                 uri: "arn:aws:apigateway:us-east-1:dynamodb:action/PutItem"
                 responses:
