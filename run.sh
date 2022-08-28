@@ -8,14 +8,13 @@ aws configure set aws_secret_access_key $SECRET_ACCESS_KEY
 aws configure set region us-east-1
 
 # -----------------------------------------------------------------
-# Open CloudFormation in the AWS Console 
-# 1. Check for a Stack named EducativeCourseApiGateway
-# 2. If there is such a stack, created in a previous lesson,
-#    delete it by clicking on the Delete button
-# 3. Wait for some time till it is deleted completely then press 
-#    Enter to resume this script
+# Delete any old deployments
 # -----------------------------------------------------------------
-read a
+# 1. Trigger CloudFormation stack delete
+# 2. Wait for the stack to be deleted 
+aws cloudformation delete-stack --stack-name  EducativeCourseApiGateway
+aws cloudformation wait stack-delete-complete --stack-name EducativeCourseApiGateway
+
 
 # -----------------------------------------------------------------
 # External API, no Lambda function. Initiate the CloudFormation deployment.
