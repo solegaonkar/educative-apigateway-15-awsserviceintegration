@@ -44,7 +44,7 @@ Resources:
                 type: "aws"
                 credentials: "arn:aws:iam::${AWS::AccountId}:role/EducativeRole"
                 httpMethod: "POST"
-                uri: "arn:aws:apigateway:us-east-1:dynamodb:action/GetItem"
+                uri: "arn:aws:apigateway:${AWS::Region}:dynamodb:action/GetItem"
                 responses:
                   default:
                     statusCode: "200"
@@ -61,7 +61,7 @@ Resources:
                 type: "aws"
                 credentials: "arn:aws:iam::${AWS::AccountId}:role/EducativeRole"
                 httpMethod: "POST"
-                uri: "arn:aws:apigateway:us-east-1:dynamodb:action/PutItem"
+                uri: "arn:aws:apigateway:${AWS::Region}:dynamodb:action/PutItem"
                 responses:
                   default:
                     statusCode: "200"
